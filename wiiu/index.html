@@ -23,6 +23,7 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      text-align: center;
     }
     .splash img {
       width: 100px;
@@ -82,7 +83,8 @@
   <div class="splash" id="splashScreen">
     <div>
       <img src="https://yeetov.github.io/playniteweblaunch/images/consoles/Wii%20U.png" alt="Wii U Logo">
-      <h2>Launching Game...</h2>
+      <h2>Launching <span id="gameNameSplash">Game Name</span></h2>
+      <img id="gameCoverSplash" src="" alt="Game Cover">
     </div>
   </div>
 
@@ -121,22 +123,31 @@
           } else {
             document.getElementById('instructions').textContent = 'Console not found for this game.';
           }
+
+          // Update splash screen with game cover and name
+          document.getElementById('gameNameSplash').textContent = gameName;
+          document.getElementById('gameCoverSplash').src = coverPath;
+
         } else {
           document.getElementById('gameName').textContent = 'Game not found';
           document.getElementById('instructions').textContent = 'Unable to load instructions for this game.';
         }
 
         // Hide splash screen and show main content
-        document.getElementById('splashScreen').style.display = 'none';
-        document.getElementById('mainContent').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('splashScreen').style.display = 'none';
+          document.getElementById('mainContent').style.display = 'block';
+        }, 3000); // Wait 3 seconds before showing content
       })
       .catch(error => {
         console.error('Error loading game data:', error);
         document.getElementById('instructions').textContent = 'Error loading game data.';
 
         // Hide splash screen and show error content
-        document.getElementById('splashScreen').style.display = 'none';
-        document.getElementById('mainContent').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('splashScreen').style.display = 'none';
+          document.getElementById('mainContent').style.display = 'block';
+        }, 3000); // Wait 3 seconds before showing error content
       });
   </script>
 </body>
