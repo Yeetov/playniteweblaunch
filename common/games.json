@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "cover": "C:/Users/necro/Documents/PlayniteOfflineGuide/images/covers/1.jpg",
+    "instructions": "Press the power button on your {console}. Navigate to the Home Menu and open {gameName}.",
+    "consoles": [
+      {
+        "name": "Wii U",
+        "logo": "C:/Users/necro/Documents/PlayniteOfflineGuide/images/consoles/Wii U.png"
+      },
+      {
+        "name": "Nintendo Switch",
+        "logo": "C:/Users/necro/Documents/PlayniteOfflineGuide/images/consoles/Nintendo Switch.png"
+      }
+    ]
+  }
+]
