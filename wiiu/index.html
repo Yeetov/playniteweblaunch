@@ -56,19 +56,19 @@
 </head>
 <body>
   <div class="container">
-    <img src="../images/consoles/Wii%20U.png" alt="Wii U Logo" id="consoleLogo" class="logo">
+    <img src="/playniteweblaunch/images/consoles/Wii%20U.png" alt="Wii U Logo" id="consoleLogo" class="logo">
     <h1 id="gameName">Game Name</h1>
     <p id="instructions"></p>
     <img src="" alt="Game Cover" id="gameCover">
     <br><br>
-    <img src="../images/wiiu_example.png" alt="Wii U Menu Preview" class="menu-preview">
+    <img src="/playniteweblaunch/images/wiiu_example.png" alt="Wii U Menu Preview" class="menu-preview">
     <br><br>
-    <a href="../index.html">Back to Main Menu</a>
+    <a href="/playniteweblaunch/index.html">Back to Main Menu</a>
   </div>
 
   <script>
     // Load the JSON file
-    fetch('../common/games.json')
+    fetch('/playniteweblaunch/common/games.json')
       .then(response => response.json())
       .then(games => {
         const gameId = new URLSearchParams(window.location.search).get('id');
@@ -77,7 +77,7 @@
         const game = games.find(g => g.id === gameId);
         if (game) {
           const gameName = game.name;
-          const coverPath = `../images/covers/${game.id}.jpg`;  // Assuming cover extensions are known
+          const coverPath = '/playniteweblaunch/images/covers/' + game.id + '.jpg'; // Cover path for game
           document.getElementById('gameName').textContent = gameName;
           document.getElementById('gameCover').src = coverPath;
 
