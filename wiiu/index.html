@@ -47,21 +47,28 @@
     a:hover {
       background-color: #0051a3;
     }
+    .menu-preview {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="" alt="Console Logo" id="consoleLogo" class="logo">
+    <img src="../images/consoles/Wii%20U.png" alt="Wii U Logo" id="consoleLogo" class="logo">
     <h1 id="gameName">Game Name</h1>
     <p id="instructions"></p>
     <img src="" alt="Game Cover" id="gameCover">
+    <br><br>
+    <img src="../images/wiiu_example.png" alt="Wii U Menu Preview" class="menu-preview">
     <br><br>
     <a href="../index.html">Back to Main Menu</a>
   </div>
 
   <script>
     // Load the JSON file
-    fetch('../common/games.json')  <!-- Relative path to the JSON -->
+    fetch('../common/games.json')
       .then(response => response.json())
       .then(games => {
         const gameId = new URLSearchParams(window.location.search).get('id');
